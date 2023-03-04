@@ -9,10 +9,10 @@
 <body>
         <h1>DAFTAR MAHASISWA</h1>
         <OL>
-            <LI>FADHIL AKRAM</LI>
-            <LI>URFI SHANDA</LI>
-            <LI>MUHAMMMAD ZAKI</LI>
-            <LI>RISKI AULIA</LI>
+            <?php foreach ($mahasiswa as $arrmahasiswa) {
+            echo"<li>$arrmahasiswa</li>";
+            }
+            ?>
         </OL>
         <div>
             copyright&copy;<?php echo date("Y");?>Program studi teknik informatika-pnl

@@ -137,6 +137,67 @@ Route::get('/mahasiswa',function(){
     return view('kampus/mahasiswa');
 });
 
+//mengerim data ke view sebagai argument
+Route::get('/mahasiswa',function(){
+    return view('kampus.mahasiswa',["mahasiswa01"=>"SERGIO AGUERO"]);
+});
+
+Route::get('/mahasiswa',function(){
+    return view('kampus.mahasiswa',
+    [
+        "mahasiswa01"=>"SERGIO AGUERO",
+        "mahasiswa02"=>"ABU LAOT",
+        "mahasiswa03"=>"FERDI SAMBUT",
+        "mahasiswa04"=>"ANTONI GRIEZMAN"
+    ]);
+});
+
+Route::get('/mahasiswa',function(){
+    $arrmahasiswa=[
+        "mahasiswa01"=>"fadhil akram",
+        "mahasiswa02"=>"FERDY SAMBUT",
+        "mahasiswa03"=>"FREDY BUDIMAN",
+        "mahasiswa04"=>"RAHMAT REZEKI",
+    ];
+    return view('kampus.mahasiswa',$arrmahasiswa);
+});
+
+Route::get('/mahasiswa',function(){
+    $arrmahasiswa=["fadhil akram","FERDY SAMBUT","FREDY BUDIMAN","RAHMAT REZEKI",];
+    return view('kampus.mahasiswa',['mahasiswa'=>$arrmahasiswa]);
+});
+
+Route::get('/mahasiswa',function(){
+    return view('kampus.mahasiswa')->with('mahasiswa01','FADHIL AKRAM');
+});
+
+//LOOPING
+Route::get('/mahasiswa',function(){
+    $arrmahasiswa=["fadhil akram","FERDY SAMBUT","FREDY BUDIMAN","RAHMAT REZEKI",];
+    return view('kampus.mahasiswa')->with('mahasiswa',$arrmahasiswa);
+});
+
+Route::get('/mahasiswa',function(){
+    return view('kampus.mahasiswa')
+    ->with('mahasiswa01','DONI SALMAN')
+    ->with('mahasiswa02','INDRA KENZ')
+    ->with('mahasiswa03','NODIE WAKGENK')
+    ->with('mahasiswa04','BABON SANTOSO')
+});
+
+//FUNCTION COMPACT
+Route::get('/mahasiswa',function(){
+    $mahasiswa01="DONI SALMANAN",
+    $mahasiswa02="INDRA KENZ",
+    $Mahasiswa03="RUDI SALIM",
+    $mahasiswa04="RAFFI AHMAD"
+    return view('kampus.mahasiswa',compact("mahasiswa01","mahasiswa02","mahasiswa03","mahasiswa04"))
+});
+
+
+
+
+
 
 
 
