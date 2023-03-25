@@ -208,12 +208,34 @@ use Illuminate\Support\Facades\Route;
 //     return view('mahasiswa',compact('nama','nilai'));
 // });
 
-//MENENTUKAN NILAI
+// //MENENTUKAN NILAI
+// Route::get('/mahasiswa',function(){
+//     $nama='FERDI SAMBOT';
+//     $nilai=[80,64,30,76,95];
+//     return view('mahasiswa',compact('nama','nilai'));
+// });
+
+// BAB 4
 Route::get('/mahasiswa',function(){
-    $nama='FERDI SAMBOT';
-    $nilai=[80,64,30,76,95];
-    return view('mahasiswa',compact('nama','nilai'));
+    $arrmahasiswa=["FADHIL AKRAM","FERDY SAMBUT","FREDY BUDIMAN","RAHMAT REZEKI",];
+    return view('mahasiswa')->with('mahasiswa',$arrmahasiswa); 
 });
+
+Route::get('/dosen',function(){
+    $arrdosen=["MAYA FITRIA, M.M","PROF.SILVIA NST,M.FARM","DR.UMAR AGUSTINUS","DR.SYAHRIAL, M.KOM",];
+    return view('dosen')->with('dosen',$arrdosen); 
+});
+
+Route::get('gallery',function(){
+    return view('gallery'); 
+});
+
+Route::get('admin',function(){
+    return view('admin'); 
+});
+
+
+
 
 
 
